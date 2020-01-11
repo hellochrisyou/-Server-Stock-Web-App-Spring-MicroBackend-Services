@@ -6,8 +6,15 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="tag"/>
+		<item key="selection" value="userListForm"/>
 		<list key="findhistory">
+			<item value="tagForm"/>
+			<item value="TagForm"/>
+			<item value="Tag"/>
+			<item value="Ipo"/>
+			<item value="IpoForm"/>
+			<item value="ipoForm"/>
+			<item value="tag"/>
 			<item value="history"/>
 			<item value="History"/>
 			<item value="course"/>
@@ -17,6 +24,10 @@
 			<item value="CourseRespository"/>
 		</list>
 		<list key="replacehistory">
+			<item value="userListForm"/>
+			<item value="UserListForm"/>
+			<item value="userList"/>
+			<item value="UserList"/>
 			<item value="tag"/>
 			<item value="Tag"/>
 			<item value="ipo"/>
@@ -27,9 +38,9 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="1739"/>
-		<item key="DIALOG_Y_ORIGIN" value="713"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
 		<item key="DIALOG_WIDTH" value="385"/>
-		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_HEIGHT" value="561"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
 	</section>
 </section>

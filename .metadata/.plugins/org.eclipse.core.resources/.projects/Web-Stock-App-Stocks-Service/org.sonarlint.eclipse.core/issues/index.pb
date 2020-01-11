@@ -23,3 +23,11 @@ s
 Csrc/main/java/com/stock/ipo/service/serviceImpl/TagServiceImpl.java,3\a\3a35c68f148782751c103d80bf4282f698cfd73a
 c
 3src/main/java/com/stock/ipo/service/TagService.java,7\d\7db0a8c3168eff67eb0547081074b91ed27c281e
+[
++src/main/java/com/stock/ipo/domain/Ipo.java,1\e\1ee049bfa350abd0db6385ccf20839570226c7da
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+`
+0src/main/java/com/stock/ipo/command/IpoForm.java,4\5\455aef4c80eea95cde5d9d0259dddc68dacb7a35
+e
+5src/main/java/com/stock/ipo/convert/IpoFormToIpo.java,4\2\422fc9755a01b86e8cdac02deb85f440e4cccb60

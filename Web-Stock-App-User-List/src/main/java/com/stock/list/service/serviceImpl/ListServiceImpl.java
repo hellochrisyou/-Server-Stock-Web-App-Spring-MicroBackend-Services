@@ -33,7 +33,7 @@ public class ListServiceImpl implements UserListService{
     }
     
     @Override
-    public UserList getByEmail(String email) {
+    public List<UserList> getByEmail(String email) {
     	return userListRepository.findByEmail(email);
     }
 

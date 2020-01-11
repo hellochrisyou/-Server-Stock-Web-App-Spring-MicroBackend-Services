@@ -35,7 +35,7 @@ public class IpoFormToIpo implements Converter<IpoForm, Ipo> {
         ipo.setStockHolderEquity(ipoForm.getStockHolderEquity());
         ipo.setSymbol(ipoForm.getSymbol());
         ipo.setTotalAssets(ipoForm.getTotalAssets());
-        ipo.setUrl(ipoForm);
+        ipo.setUrl(ipoForm.getUrl());
         ipo.setUseOfProceeds(ipoForm.getUseOfProceeds());
         
         return ipo;

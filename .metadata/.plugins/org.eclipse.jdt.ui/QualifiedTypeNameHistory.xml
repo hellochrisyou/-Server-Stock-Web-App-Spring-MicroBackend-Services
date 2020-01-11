@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="org.springframework.data.mongodb.core.mapping.Document"/>
 <fullyQualifiedTypeName name="antlr.collections.List"/>
 <fullyQualifiedTypeName name="com.stock.history.domain.History"/>
@@ -14,10 +13,11 @@
 <fullyQualifiedTypeName name="com.stock.history.command.HistoryForm"/>
 <fullyQualifiedTypeName name="com.stock.tag.domain.Tag"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.mongodb.Tag"/>
 <fullyQualifiedTypeName name="com.stock.ipo.command.TagForm"/>
 <fullyQualifiedTypeName name="com.stock.ipo.service.IpoService"/>
 <fullyQualifiedTypeName name="com.stock.ipo.service.TagService"/>
 <fullyQualifiedTypeName name="com.stock.ipo.domain.Tag"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
 </qualifiedTypeNameHistroy>

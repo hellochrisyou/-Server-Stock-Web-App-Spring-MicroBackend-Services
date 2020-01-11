@@ -11,7 +11,7 @@ public interface UserListService {
 
 	UserList getById(String id);
 
-	UserList getByEmail(String email);
+	List<UserList> getByEmail(String email);
 	
 	UserList saveOrUpdate(UserList tag);
 
