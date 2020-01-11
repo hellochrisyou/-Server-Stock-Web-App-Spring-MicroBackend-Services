@@ -15,14 +15,10 @@ import com.stock.ipo.service.TagService;
 @Service
 public class TagServiceImpl implements TagService{
 
+	@Autowired
 	private TagRepository tagRepository;
+	@Autowired
     private TagFormToTag tagFormToTag;
-
-    @Autowired
-    public TagServiceImpl(TagRepository tagRepository, TagFormToTag tagFormToTag) {
-        this.tagRepository = tagRepository;
-        this.tagFormToTag = tagFormToTag;
-    }
 
 
     @Override
@@ -39,7 +35,7 @@ public class TagServiceImpl implements TagService{
     
     @Override
     public Tag getByEmail(String email) {
-    	return tagRepository.findByEmail(email).orElse(null);
+    	return tagRepository.findByEmail(email);
     }
 
     @Override

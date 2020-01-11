@@ -11,6 +11,8 @@ public interface HistoryService {
 
 	History getById(String id);
 
+	History getByEmail(String email);
+	
 	History saveOrUpdate(History history);
 
 	void delete(String id);

@@ -10,7 +10,9 @@ public interface IpoService {
 	List<Ipo> listAll();
 
 	Ipo getById(String id);
-
+	
+	Ipo getByEmail(String email);
+	
 	Ipo saveOrUpdate(Ipo ipo);
 
 	void delete(String id);

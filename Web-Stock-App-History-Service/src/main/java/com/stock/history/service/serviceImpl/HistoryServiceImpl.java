@@ -38,6 +38,11 @@ public class HistoryServiceImpl implements HistoryService{
     }
 
     @Override
+    public History getByEmail(String email) {
+    	return historyRepository.findByEmail(email);
+    }
+    
+    @Override
     public History saveOrUpdate(History history) {
         historyRepository.save(history);
         return history;

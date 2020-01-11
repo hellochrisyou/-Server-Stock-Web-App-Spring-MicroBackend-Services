@@ -15,14 +15,10 @@ import com.stock.ipo.service.IpoService;
 @Service
 public class IpoServiceImpl implements IpoService{
 
+	@Autowired
 	private IpoRepository ipoRepository;
+	@Autowired
     private IpoFormToIpo ipoFormToIpo;
-
-    @Autowired
-    public IpoServiceImpl(IpoRepository ipoRepository, IpoFormToIpo ipoFormToIpo) {
-        this.ipoRepository = ipoRepository;
-        this.ipoFormToIpo = ipoFormToIpo;
-    }
 
 
     @Override
@@ -35,6 +31,11 @@ public class IpoServiceImpl implements IpoService{
     @Override
     public Ipo getById(String id) {
         return ipoRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Ipo getByEmail(String email) {
+    	return ipoRepository.findByEmail(email);
     }
 
     @Override

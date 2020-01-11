@@ -16,27 +16,27 @@ public class IpoFormToIpo implements Converter<IpoForm, Ipo> {
         if (ipoForm.getId() != null  && !StringUtils.isEmpty(ipoForm.getId())) {
             ipo.setId(new ObjectId(ipoForm.getId()));
         }
-        ipo.setAmount(ipo.getAmount());
-        ipo.setBusinessDesc(ipo.getBusinessDesc());
-        ipo.setCeo(ipo.getCeo());
-        ipo.setCity(ipo.getCity());
-        ipo.setCompanyDesc(ipo.getCompanyDesc());
-        ipo.setCompetition(ipo.getCompetition());
-        ipo.setEmail(ipo.getEmail());
-        ipo.setMarket(ipo.getMarket());
-        ipo.setName(ipo.getName());
-        ipo.setNetIncome(ipo.getNetIncome());
-        ipo.setPercentOffered(ipo.getPercentOffered());
-        ipo.setPriceHigh(ipo.getPriceHigh());
-        ipo.setPriceLow(ipo.getPriceLow());
-        ipo.setRevenue(ipo.getRevenue());
-        ipo.setSharedOffered(ipo.getSharedOffered());
-        ipo.setState(ipo.getState());
-        ipo.setStockHolderEquity(ipo.getStockHolderEquity());
-        ipo.setSymbol(ipo.getSymbol());
-        ipo.setTotalAssets(ipo.getTotalAssets());
-        ipo.setUrl(ipo.getUrl());
-        ipo.setUseOfProceeds(ipo.getUseOfProceeds());
+        ipo.setAmount(ipoForm.getAmount());
+        ipo.setBusinessDesc(ipoForm.getBusinessDesc());
+        ipo.setCeo(ipoForm.getCeo());
+        ipo.setCity(ipoForm.getCity());
+        ipo.setCompanyDesc(ipoForm.getCompanyDesc());
+        ipo.setCompetition(ipoForm.getCompetition());
+        ipo.setEmail(ipoForm.getEmail());
+        ipo.setMarket(ipoForm.getMarket());
+        ipo.setName(ipoForm.getName());
+        ipo.setNetIncome(ipoForm.getNetIncome());
+        ipo.setPercentOffered(ipoForm.getPercentOffered());
+        ipo.setPriceHigh(ipoForm.getPriceHigh());
+        ipo.setPriceLow(ipoForm.getPriceLow());
+        ipo.setRevenue(ipoForm.getRevenue());
+        ipo.setSharedOffered(ipoForm.getSharedOffered());
+        ipo.setState(ipoForm.getState());
+        ipo.setStockHolderEquity(ipoForm.getStockHolderEquity());
+        ipo.setSymbol(ipoForm.getSymbol());
+        ipo.setTotalAssets(ipoForm.getTotalAssets());
+        ipo.setUrl(ipoForm);
+        ipo.setUseOfProceeds(ipoForm.getUseOfProceeds());
         
         return ipo;
     }

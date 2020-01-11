@@ -10,8 +10,6 @@ Asrc/main/java/com/stock/history/repository/HistoryRepository.java,3\9\39168d39
 q
 Asrc/main/java/com/stock/history/convert/HistoryFormToHistory.java,e\9\e9c1dd963ed26d7e667d4b75a01b379afabf6792
 q
-Asrc/main/java/com/stock/history/convert/HistoryToHistoryFOrm.java,e\7\e732cadb2a28d5915bc992e1d6ce45ebc08b66f9
-q
 Asrc/main/java/com/stock/history/convert/HistoryToHistoryForm.java,2\4\24da67258935de6446e0ba6eba0060844ca2d5cf
 {
 Ksrc/main/java/com/stock/history/service/serviceImpl/HistoryServiceImpl.java,5\0\50756455924e9831f8f23055911c9965aa0d1cc0

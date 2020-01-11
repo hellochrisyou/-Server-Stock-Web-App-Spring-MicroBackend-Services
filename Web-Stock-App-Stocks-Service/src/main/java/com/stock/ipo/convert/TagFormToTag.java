@@ -15,18 +15,18 @@ public class TagFormToTag implements Converter<TagForm, Tag> {
         if (tagForm.getId() != null  && !StringUtils.isEmpty(tagForm.getId())) {
             tag.setId(new ObjectId(tagForm.getId()));
         }
-        tag.setChange(tag.getChange());
-        tag.setChangePercent(tag.getChangePercent());
-        tag.setEmail(tag.getEmail());
-        tag.setExchange(tag.getExchange());
-        tag.setHigh(tag.getHigh());
-        tag.setLatestPrice(tag.getLatestPrice());
-        tag.setLow(tag.getLow());
-        tag.setName(tag.getName());
-        tag.setOpen(tag.getOpen());
-        tag.setWeek52High(tag.getWeek52High());
-        tag.setWeek52Low(tag.getWeek52Low());
-        tag.setYtdChange(tag.getYtdChange());
+        tag.setChange(tagForm.getChange());
+        tag.setChangePercent(tagForm.getChangePercent());
+        tag.setEmail(tagForm.getEmail());
+        tag.setExchange(tagForm.getExchange());
+        tag.setHigh(tagForm.getHigh());
+        tag.setLatestPrice(tagForm.getLatestPrice());
+        tag.setLow(tagForm.getLow());
+        tag.setName(tagForm.getName());
+        tag.setOpen(tagForm.getOpen());
+        tag.setWeek52High(tagForm.getWeek52High());
+        tag.setWeek52Low(tagForm.getWeek52Low());
+        tag.setYtdChange(tagForm.getYtdChange());
         
         return tag;
     }
