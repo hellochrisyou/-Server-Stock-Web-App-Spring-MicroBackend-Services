@@ -1,0 +1,5 @@
+package com.stock.history.repository;
+
+public interface HistoryRepository {
+
+}

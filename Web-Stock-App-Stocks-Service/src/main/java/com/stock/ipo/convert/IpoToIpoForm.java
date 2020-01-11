@@ -1,0 +1,41 @@
+package com.stock.ipo.convert;
+
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
+
+import com.stock.ipo.command.IpoForm;
+import com.stock.ipo.domain.Ipo;
+
+@Component
+public class IpoToIpoForm implements Converter<Ipo, IpoForm> {
+	
+    @Override
+    public IpoForm convert(Ipo ipo) {
+    	
+    	IpoForm ipoForm = new IpoForm();
+    	ipoForm.setId(ipo.getId().toHexString());
+    	ipoForm.setAmount(ipo.getAmount());
+    	ipoForm.setBusinessDesc(ipo.getBusinessDesc());
+    	ipoForm.setCeo(ipo.getCeo());
+    	ipoForm.setCity(ipo.getCity());
+    	ipoForm.setCompanyDesc(ipo.getCompanyDesc());
+    	ipoForm.setCompetition(ipo.getCompetition());
+    	ipoForm.setEmail(ipo.getEmail());
+    	ipoForm.setMarket(ipo.getMarket());
+    	ipoForm.setName(ipo.getName());
+    	ipoForm.setNetIncome(ipo.getNetIncome());
+    	ipoForm.setPercentOffered(ipo.getPercentOffered());
+    	ipoForm.setPriceHigh(ipo.getPriceHigh());
+    	ipoForm.setPriceLow(ipo.getPriceLow());
+    	ipoForm.setRevenue(ipo.getRevenue());
+    	ipoForm.setSharedOffered(ipo.getSharedOffered());
+    	ipoForm.setState(ipo.getState());
+    	ipoForm.setStockHolderEquity(ipo.getStockHolderEquity());
+    	ipoForm.setSymbol(ipo.getSymbol());
+    	ipoForm.setTotalAssets(ipo.getTotalAssets());
+    	ipoForm.setUrl(ipo.getUrl());
+    	ipoForm.setUseOfProceeds(ipo.getUseOfProceeds());
+    	
+    	return ipoForm;
+    }
+}

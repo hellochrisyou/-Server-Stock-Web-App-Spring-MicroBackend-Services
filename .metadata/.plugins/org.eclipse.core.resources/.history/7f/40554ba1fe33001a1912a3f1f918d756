@@ -1,0 +1,5 @@
+package com.stock.ipo.domain;
+
+public class Ipo {
+
+}

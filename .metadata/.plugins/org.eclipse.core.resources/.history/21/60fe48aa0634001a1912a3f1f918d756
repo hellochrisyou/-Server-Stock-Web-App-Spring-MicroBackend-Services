@@ -1,0 +1,20 @@
+package com.stock.ipo.service;
+
+import java.util.List;
+
+import com.mongodb.Tag;
+import com.stock.ipo.command.TagForm;
+
+
+public interface TagService {
+
+	List<Tag> listAll();
+
+	Tag getById(String id);
+
+	Tag saveOrUpdate(Tag tag);
+
+	void delete(String id);
+
+	Tag saveOrUpdateProductForm(TagForm tagForm);
+}

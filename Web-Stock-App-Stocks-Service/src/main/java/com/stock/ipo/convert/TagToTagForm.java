@@ -1,0 +1,32 @@
+package com.stock.ipo.convert;
+
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
+
+import com.stock.ipo.command.TagForm;
+import com.stock.ipo.domain.Tag;
+
+@Component
+public class TagToTagForm implements Converter<Tag, TagForm> {
+	
+    @Override
+    public TagForm convert(Tag tag) {
+    	
+    	TagForm tagForm = new TagForm();
+    	tagForm.setId(tag.getId().toHexString());
+    	tagForm.setChange(tag.getChange());
+    	tagForm.setChangePercent(tag.getChangePercent());
+    	tagForm.setEmail(tag.getEmail());
+    	tagForm.setExchange(tag.getExchange());
+    	tagForm.setHigh(tag.getHigh());
+    	tagForm.setLatestPrice(tag.getLatestPrice());
+    	tagForm.setLow(tag.getLow());
+    	tagForm.setName(tag.getName());
+    	tagForm.setOpen(tag.getOpen());
+    	tagForm.setWeek52High(tag.getWeek52High());
+    	tagForm.setWeek52Low(tag.getWeek52Low());
+    	tagForm.setYtdChange(tag.getYtdChange());
+    	
+    	return tagForm;
+    }
+}

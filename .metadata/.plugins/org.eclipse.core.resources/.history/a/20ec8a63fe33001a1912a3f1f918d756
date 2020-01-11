@@ -1,0 +1,15 @@
+package com.stock.history.domain;
+
+import java.util.Date;
+
+import javax.persistence.Id;
+
+@Document
+public class History {
+	@Id
+	private String id;
+	private String email;
+	private String action; 
+	private String title;
+	private Date timeOfAction;
+}

@@ -1,0 +1,31 @@
+package com.stock.ipo.convert;
+
+import org.bson.types.ObjectId;
+import org.springframework.util.StringUtils;
+
+import com.stock.ipo.command.IpoForm;
+import com.stock.ipo.domain.Ipo;
+
+import org.springframework.core.convert.converter.Converter;
+
+public class IpoFormToIpo implements Converter<IpoForm, Ipo> {
+
+    @Override
+    public Ipo convert(IpoForm ipoForm) {
+    	Ipo ipo = new Ipo();
+        if (ipoForm.getId() != null  && !StringUtils.isEmpty(ipoForm.getId())) {
+            ipo.setId(new ObjectId(ipoForm.getId()));
+        }
+        ipo
+        course.setCity(courseForm.getCity());
+        course.setDistance(courseForm.getDistance());
+        course.setEmail(courseForm.getEmail());
+        course.setManager(courseForm.getManager());
+        course.setName(courseForm.getName());
+        course.setPhoneNum(courseForm.getPhoneNum());
+        course.setRules(courseForm.getRules());
+        course.setState(courseForm.getState());
+        course.setDescription(courseForm.getDescription());
+        return course;
+    }
+}

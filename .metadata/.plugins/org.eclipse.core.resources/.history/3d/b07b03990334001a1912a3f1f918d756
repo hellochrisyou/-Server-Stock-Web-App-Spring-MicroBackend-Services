@@ -1,0 +1,5 @@
+package com.stock.ipo.service;
+
+public interface IpoService {
+
+}

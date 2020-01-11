@@ -1,0 +1,14 @@
+package com.stock.history.command;
+
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+
+public class HistoryForm {
+	
+	@Id
+	private id;
+	private String 
+
+}

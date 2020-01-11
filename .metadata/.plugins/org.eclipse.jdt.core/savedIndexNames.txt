@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\chris\OneDrive\Workspaces\Stock-Web-App-Services\.metadata\.plugins\org.eclipse.jdt.core
+341263954.index
