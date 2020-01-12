@@ -2,5 +2,4 @@
 <aop-reference-model>
 <aop-project name="Web-Stock-App-History-Service"/>
 <aop-project name="Web-Stock-App-Stocks-Service"/>
-<aop-project name="Web-Stock-App-User-List"/>
 </aop-reference-model>

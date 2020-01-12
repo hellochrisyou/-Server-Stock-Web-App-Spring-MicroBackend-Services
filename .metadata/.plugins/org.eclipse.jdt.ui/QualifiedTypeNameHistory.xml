@@ -17,7 +17,21 @@
 <fullyQualifiedTypeName name="com.stock.ipo.service.IpoService"/>
 <fullyQualifiedTypeName name="com.stock.ipo.service.TagService"/>
 <fullyQualifiedTypeName name="com.stock.ipo.domain.Tag"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.stock.history.command.SearchHistoryForm"/>
+<fullyQualifiedTypeName name="com.stock.history.domain.SearchHistory"/>
+<fullyQualifiedTypeName name="com.stock.history.command.ActivityHistoryForm"/>
+<fullyQualifiedTypeName name="com.stock.history.service.ActivityHistoryService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="com.stock.history.service.serviceImpl.ActivityHistoryServiceImpl"/>
+<fullyQualifiedTypeName name="com.stock.history.domain.BaseHistory"/>
+<fullyQualifiedTypeName name="com.stock.history.convert.ActivityHistoryFormToActivityHistory"/>
+<fullyQualifiedTypeName name="com.mongodb.client.MongoClient"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.stock.history.domain.ActivityHistory"/>
+<fullyQualifiedTypeName name="com.stock.history.repository.SearchHistoryRepository"/>
+<fullyQualifiedTypeName name="com.stock.history.graphQL.GraphQLProvider"/>
+<fullyQualifiedTypeName name="com.stock.history.graphQL.GraphQLDataFetchers"/>
+<fullyQualifiedTypeName name="com.mongodb.MongoClient"/>
 </qualifiedTypeNameHistroy>

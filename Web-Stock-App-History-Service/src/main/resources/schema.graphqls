@@ -1,0 +1,34 @@
+schema{
+ query: Query
+ mutation : Mutation
+}
+
+type Query {
+	queryAllActivityHistory(email: String): [BaseHistory]
+	queryAllSearchHistory(email: String): [BaseHistory]
+}
+
+type Mutation {
+	addActivityHistory(activeHisArr: [BaseHistoryInput]): BaseHistory
+	updateActivityHistory(activeHisArr: [BaseHistoryInput]): BaseHistory
+	removeActivityHistory(activeHisArr: [BaseHistoryInput]): BaseHistory
+	addSearchHistory(searchHisArr: [BaseHistoryInput]): BaseHistory
+	updateSearchHistory(searchHisArr: [BaseHistoryInput]): BaseHistory
+	removeSearchHistory(searchHisArr: [BaseHistoryInput]): BaseHistory
+	
+}
+
+type BaseHistory {
+	id: ID,
+	email: String,
+	action: String,
+	timeOfAction: DateTime
+}
+
+
+input BaseHistoryInput {
+	id: ID,
+	email: String,
+	action: String,
+	timeOfAction: DateTime
+}

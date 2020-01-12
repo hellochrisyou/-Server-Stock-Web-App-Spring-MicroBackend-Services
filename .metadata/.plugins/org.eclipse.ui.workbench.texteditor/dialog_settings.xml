@@ -6,8 +6,15 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="userListForm"/>
+		<item key="selection" value="graph"/>
 		<list key="findhistory">
+			<item value="graph"/>
+			<item value="activity"/>
+			<item value="Activity"/>
+			<item value="history"/>
+			<item value="History"/>
+			<item value="activeHistory"/>
+			<item value="ActivityHistory"/>
 			<item value="tagForm"/>
 			<item value="TagForm"/>
 			<item value="Tag"/>
@@ -15,15 +22,15 @@
 			<item value="IpoForm"/>
 			<item value="ipoForm"/>
 			<item value="tag"/>
-			<item value="history"/>
-			<item value="History"/>
 			<item value="course"/>
-			<item value="courseRepository"/>
-			<item value="CourseRepository"/>
-			<item value="package com.stock.history.service.serviceImpl;"/>
-			<item value="CourseRespository"/>
 		</list>
 		<list key="replacehistory">
+			<item value="search"/>
+			<item value="Search"/>
+			<item value="activityHistory"/>
+			<item value="ActivityHistory"/>
+			<item value="searchHistory"/>
+			<item value="SearchHistory"/>
 			<item value="userListForm"/>
 			<item value="UserListForm"/>
 			<item value="userList"/>
@@ -33,7 +40,6 @@
 			<item value="ipo"/>
 			<item value="Ipo"/>
 			<item value="historyRepository"/>
-			<item value="HistoryRepository"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
