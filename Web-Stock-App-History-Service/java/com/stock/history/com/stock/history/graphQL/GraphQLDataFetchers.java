@@ -7,15 +7,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.stock.history.domain.ActivityHistory;
-import com.stock.history.domain.BaseHistory;
-import com.stock.history.domain.SearchHistory;
-import com.stock.history.repository.ActivityHistoryRepository;
-import com.stock.history.repository.SearchHistoryRepository;
-import com.stock.history.service.ActivityHistoryService;
-import com.stock.history.service.SearchHistoryService;
-
+import domain.ActivityHistory;
+import domain.BaseHistory;
+import domain.SearchHistory;
 import graphql.schema.DataFetcher;
+import repository.ActivityHistoryRepository;
+import repository.SearchHistoryRepository;
+import service.ActivityHistoryService;
+import service.SearchHistoryService;
 
 @Component
 public class GraphQLDataFetchers {

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.stock.history.domain.SearchHistory;
 
-@Repository
 @RepositoryRestResource(collectionResourceRel = "searchHistory", path = "searchHistory")
 public interface SearchHistoryRepository extends MongoRepository<SearchHistory, String> {
 	

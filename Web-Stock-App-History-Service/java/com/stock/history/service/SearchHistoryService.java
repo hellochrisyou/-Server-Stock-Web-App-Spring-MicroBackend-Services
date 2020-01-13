@@ -7,6 +7,4 @@ public interface SearchHistoryService {
 	public SearchHistory addSearchHistory(final SearchHistory searchHistory);
 
 	public void removeSearchHistory(final String id);
-
-	public SearchHistory updateSearchHistory(final SearchHistory searchHistory);
 }

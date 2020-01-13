@@ -23,8 +23,4 @@ public class SearchHistoryServiceImpl implements SearchHistoryService{
         searchHistoryRepository.deleteById(id);
     }
     
-    @Override
-    public SearchHistory updateSearchHistory(final SearchHistory searchHistory) {
-    	return searchHistoryRepository.save(searchHistory);
-    }
 }

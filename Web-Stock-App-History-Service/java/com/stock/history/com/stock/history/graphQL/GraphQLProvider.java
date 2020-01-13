@@ -25,7 +25,7 @@ import graphql.schema.idl.TypeDefinitionRegistry;
 @Component
 public class GraphQLProvider {
 
-	private GraphQL graphQL;
+	public GraphQL graphQL;
 
 	@Autowired
 	GraphQLDataFetchers graphQLDataFetchers;
