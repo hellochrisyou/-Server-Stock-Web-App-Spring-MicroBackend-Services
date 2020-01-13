@@ -19,12 +19,12 @@ public class SearchHistoryServiceImpl implements SearchHistoryService{
     }
 
     @Override
-    public SearchHistory updateSearchHistory(final SearchHistory searchHistory) {
-    	return searchHistoryRepository.save(searchHistory);
+    public void removeSearchHistory(final String id) {
+        searchHistoryRepository.deleteById(id);
     }
     
     @Override
-    public void removeSearchHistory(final String id) {
-        searchHistoryRepository.deleteById(id);
+    public SearchHistory updateSearchHistory(final SearchHistory searchHistory) {
+    	return searchHistoryRepository.save(searchHistory);
     }
 }

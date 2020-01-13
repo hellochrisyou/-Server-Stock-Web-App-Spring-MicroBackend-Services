@@ -13,6 +13,10 @@ import graphql.servlet.core.GraphQLErrorHandler;
 // https://github.com/michalgebauer/spring-graphql-security/blob/master/src/main/java/com/mi3o/springgraphqlsecurity/config/CustomGraphQLErrorHandler.java
 @Component
 public class CustomGraphQLErrorHandler implements GraphQLErrorHandler {
+    protected boolean isClientError(GraphQLError error) {
+        return !(error instanceof ExceptionWhileDataFetching || error instanceof Throwable);
+    }
+
     @Override
     public List<GraphQLError> processErrors(List<GraphQLError> errors) {
         List<GraphQLError> clientErrors = errors.stream()
@@ -28,9 +32,5 @@ public class CustomGraphQLErrorHandler implements GraphQLErrorHandler {
         e.addAll(clientErrors);
         e.addAll(serverErrors);
         return e;
-    }
-
-    protected boolean isClientError(GraphQLError error) {
-        return !(error instanceof ExceptionWhileDataFetching || error instanceof Throwable);
     }
 }

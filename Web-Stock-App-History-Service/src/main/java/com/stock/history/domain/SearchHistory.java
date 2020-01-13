@@ -2,21 +2,21 @@ package com.stock.history.domain;
 
 import java.util.Date;
 
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
-import com.stock.history.command.SearchHistoryForm;
-
-@Document(collection = "SearchHistory")
+//@Document(collection = "SearchHistory")
+@Data
+@RequiredArgsConstructor
 public class SearchHistory implements BaseHistory {
 	
-//	@Id
-//	private ObjectId id;
-//	private String email;
-//	private String action;
-//	private Date timeOfAction;
+	@Id
+	private String id;
+	private String email;
+	private String action;
+	private Date timeOfAction;
 //
 //	public ObjectId getId() {
 //		return id;
@@ -97,41 +97,41 @@ public class SearchHistory implements BaseHistory {
 //				+ "]";
 //	}
 	
-	@Id
-	private String id;
-	private String email;
-	private String action; 
-	private Date timeOfAction;
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}	
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getAction() {
-		return action;
-	}
-	public void setAction(String action) {
-		this.action = action;
-	}
-	public Date getTimeOfAction() {
-		return timeOfAction;
-	}
-	public void setTimeOfAction(Date timeOfAction) {
-		this.timeOfAction = timeOfAction;
-	}
-	@Override
-	public String toString() {
-		return "SearchHistory [id=" + id + ", email=" + email + ", action=" + action
-				+ ", timeOfAction=" + timeOfAction + "]";
-	}
+//	private String action;
+//	private String email;
+//	@Id
+//	private String id; 
+//	private Date timeOfAction;
+//	
+//	public String getAction() {
+//		return action;
+//	}
+//	public String getEmail() {
+//		return email;
+//	}	
+//	public String getId() {
+//		return id;
+//	}
+//	public Date getTimeOfAction() {
+//		return timeOfAction;
+//	}
+//	public void setAction(String action) {
+//		this.action = action;
+//	}
+//	public void setEmail(String email) {
+//		this.email = email;
+//	}
+//	public void setId(String id) {
+//		this.id = id;
+//	}
+//	public void setTimeOfAction(Date timeOfAction) {
+//		this.timeOfAction = timeOfAction;
+//	}
+//	@Override
+//	public String toString() {
+//		return "SearchHistory [id=" + id + ", email=" + email + ", action=" + action
+//				+ ", timeOfAction=" + timeOfAction + "]";
+//	}
 	
 	
 }

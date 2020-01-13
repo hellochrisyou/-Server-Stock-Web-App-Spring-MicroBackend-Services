@@ -18,26 +18,31 @@ public class GraphQLErrorAdapter implements GraphQLError {
 		this.error = error;
 	}
 
-	@Override
-	public String getMessage() {
-		return (error instanceof ExceptionWhileDataFetching)
-				? ((ExceptionWhileDataFetching) error).getException().getMessage()
-				: error.getMessage();
-	}
-
 	public GraphQLError getError() {
 		return error;
-	}
-	
-	@Override
-	public List<SourceLocation> getLocations() {
-		return error.getLocations();
 	}
 
 	@Override
 	public ErrorType getErrorType() {
 //		return error.getErrorType();
 		return (ErrorType) error.getErrorType();
+	}
+	
+	@Override
+	public Map<String, Object> getExtensions() {
+		return error.getExtensions();
+	}
+
+	@Override
+	public List<SourceLocation> getLocations() {
+		return error.getLocations();
+	}
+
+	@Override
+	public String getMessage() {
+		return (error instanceof ExceptionWhileDataFetching)
+				? ((ExceptionWhileDataFetching) error).getException().getMessage()
+				: error.getMessage();
 	}
 
 	@Override
@@ -48,10 +53,5 @@ public class GraphQLErrorAdapter implements GraphQLError {
 	@Override
 	public Map<String, Object> toSpecification() {
 		return error.toSpecification();
-	}
-
-	@Override
-	public Map<String, Object> getExtensions() {
-		return error.getExtensions();
 	}
 }

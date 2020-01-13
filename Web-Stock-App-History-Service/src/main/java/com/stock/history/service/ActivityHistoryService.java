@@ -6,7 +6,7 @@ public interface ActivityHistoryService {
 
 	public ActivityHistory addActivityHistory(final ActivityHistory activityHistory);
 	
-	public ActivityHistory updateActivityHistory(final ActivityHistory activityHistory);
-
 	public void removeActivityHistory(final String id);
+
+	public ActivityHistory updateActivityHistory(final ActivityHistory activityHistory);
 }

@@ -18,6 +18,8 @@ type Mutation {
 	
 }
 
+scalar DateTime
+
 type BaseHistory {
 	id: ID,
 	email: String,

@@ -2,10 +2,7 @@ package com.stock.history.domain;
 
 import java.util.Date;
 
-import javax.persistence.Id;
-
-import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
 
 //@Document
 public interface BaseHistory {
@@ -14,10 +11,10 @@ public interface BaseHistory {
 //	public String email = "";
 //	public String action = "";
 //	public Date timeOfAction = new Date();
-	
+		
 	@Id
-	public String id = "";
+	public String id = "";	
 	public String email = "";
 	public String action = "";
-	public Date timeOfAction = new Date();	
+	public Date dateRecorded = new Date();	
 }

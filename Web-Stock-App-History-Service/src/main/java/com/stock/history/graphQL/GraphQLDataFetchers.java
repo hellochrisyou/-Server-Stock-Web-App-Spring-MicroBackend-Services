@@ -21,26 +21,58 @@ import graphql.schema.DataFetcher;
 public class GraphQLDataFetchers {
 
 	@Autowired
-	ActivityHistoryService activityHistoryService;
+	ActivityHistoryRepository activityHistoryRepository;
 	@Autowired
-	SearchHistoryService searchHistoryService;
+	ActivityHistoryService activityHistoryService;
 	@Autowired
 	SearchHistoryRepository searchHistoryRepository;
 	@Autowired
-	ActivityHistoryRepository activityHistoryRepository;
+	SearchHistoryService searchHistoryService;
 
-//	Activity History
-	public DataFetcher<List<ActivityHistory>> getAllActivityHistory() {
-		return dataFetchingEnvironment -> {
-			Map<String, Object> vars = dataFetchingEnvironment.getArguments();
-			return activityHistoryRepository.findByEmail(vars.get("email").toString());			
-		};
-	}
-	
-	public DataFetcher<BaseHistory> addActivityHistory() {
+public DataFetcher<BaseHistory> addActivityHistory() {
 		return dataFetchingEnvironment -> {
 			Map<String, Object> test = dataFetchingEnvironment.getArguments();
 //			return activityHistoryService.saveOrUpdate(vars);
+			return null;
+		};
+	}
+	
+	public DataFetcher<BaseHistory> addSearchHistory() {
+		return dataFetchingEnvironment -> {
+			Map<String, Object> test = dataFetchingEnvironment.getArguments();
+//			return searchHistoryService.saveOrUpdate(searchHistory);
+			return null;
+		};
+	}
+	
+	//	Activity History
+	public DataFetcher<List<ActivityHistory>> getAllActivityHistory() {
+		return dataFetchingEnvironment -> {
+			Map<String, Object> vars = dataFetchingEnvironment.getArguments();
+			return this.activityHistoryRepository.findByEmail(vars.get("email").toString());			
+		};
+	}
+	
+	//	Search History
+	public DataFetcher<List<SearchHistory>> getAllSearchHistory() {
+		return dataFetchingEnvironment -> {
+			Map<String, Object> vars = dataFetchingEnvironment.getArguments();
+			return this.searchHistoryRepository.findByEmail(vars.get("email").toString());			
+		};
+	}
+	
+public DataFetcher<BaseHistory> removeActivityHistory() {
+		return dataFetchingEnvironment -> {
+			Map<String, Object> test = dataFetchingEnvironment.getArguments();
+//			return activityHistoryService.removeActivityHistory(id)
+			return null;
+		};
+	}
+	
+	public DataFetcher<BaseHistory> removeSearchHistory() {
+		return dataFetchingEnvironment -> {
+			Map<String, Object> test = dataFetchingEnvironment.getArguments();
+//			return searchHistoryService.removeSearchHistory(id);
 			return null;
 		};
 	}
@@ -53,42 +85,10 @@ public class GraphQLDataFetchers {
 		};
 	}
 	
-	public DataFetcher<BaseHistory> removeActivityHistory() {
-		return dataFetchingEnvironment -> {
-			Map<String, Object> test = dataFetchingEnvironment.getArguments();
-//			return activityHistoryService.removeActivityHistory(id)
-			return null;
-		};
-	}
-	
-//	Search History
-	public DataFetcher<List<SearchHistory>> getAllSearchHistory() {
-		return dataFetchingEnvironment -> {
-			Map<String, Object> vars = dataFetchingEnvironment.getArguments();
-			return searchHistoryRepository.findByEmail(vars.get("email").toString());			
-		};
-	}
-	
-	public DataFetcher<BaseHistory> addSearchHistory() {
-		return dataFetchingEnvironment -> {
-			Map<String, Object> test = dataFetchingEnvironment.getArguments();
-//			return searchHistoryService.saveOrUpdate(searchHistory);
-			return null;
-		};
-	}
-	
 	public DataFetcher<BaseHistory> updateSearchHistory() {
 		return dataFetchingEnvironment -> {
 			Map<String, Object> test = dataFetchingEnvironment.getArguments();
 //			return searchHistoryService.saveOrUpdate(searchHistory);
-			return null;
-		};
-	}
-	
-	public DataFetcher<BaseHistory> removeSearchHistory() {
-		return dataFetchingEnvironment -> {
-			Map<String, Object> test = dataFetchingEnvironment.getArguments();
-//			return searchHistoryService.removeSearchHistory(id);
 			return null;
 		};
 	}

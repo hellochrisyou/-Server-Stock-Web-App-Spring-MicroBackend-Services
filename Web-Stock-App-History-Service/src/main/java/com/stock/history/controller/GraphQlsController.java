@@ -22,10 +22,10 @@ import graphql.servlet.core.internal.GraphQLRequest;
 @RestController
 public class GraphQlsController {
 
-	private final Logger log = LoggerFactory.getLogger(GraphQlsController.class);
-
 	@Autowired
 	GraphQLProvider graphQLProvider;
+
+	private final Logger log = LoggerFactory.getLogger(GraphQlsController.class);
 
 	@CrossOrigin()
 	@PostMapping(value = "/graphql")

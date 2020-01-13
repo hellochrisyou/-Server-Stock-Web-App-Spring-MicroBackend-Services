@@ -19,12 +19,12 @@ public class ActivityHistoryServiceImpl implements ActivityHistoryService {
     }
 
     @Override
-    public ActivityHistory updateActivityHistory(final ActivityHistory activityHistory) {
-    	return activityHistoryRepository.save(activityHistory);
+    public void removeActivityHistory(final String id) {
+        activityHistoryRepository.deleteById(id);
     }
     
     @Override
-    public void removeActivityHistory(final String id) {
-        activityHistoryRepository.deleteById(id);
+    public ActivityHistory updateActivityHistory(final ActivityHistory activityHistory) {
+    	return activityHistoryRepository.save(activityHistory);
     }
 }
