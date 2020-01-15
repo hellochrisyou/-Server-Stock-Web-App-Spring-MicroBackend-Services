@@ -4,17 +4,12 @@ schema{
 }
 
 type Query {
-	queryAllActivityHistory(email: String): [BaseHistory]
-	queryAllSearchHistory(email: String): [BaseHistory]
+	getAllHistory(inputEmail: String]): BaseHistory
 }
 
 type Mutation {
-	addActivityHistory(activeHisArr: [BaseHistoryInput]): BaseHistory
-	updateActivityHistory(activeHisArr: [BaseHistoryInput]): BaseHistory
-	removeActivityHistory(activeHisArr: [BaseHistoryInput]): BaseHistory
-	addSearchHistory(searchHisArr: [BaseHistoryInput]): BaseHistory
-	updateSearchHistory(searchHisArr: [BaseHistoryInput]): BaseHistory
-	removeSearchHistory(searchHisArr: [BaseHistoryInput]): BaseHistory
+	addHistories(historyInput: [HistoryInput]): Response_History
+	clearHistory
 	
 }
 
@@ -27,10 +22,15 @@ type BaseHistory {
 	timeOfAction: DateTime
 }
 
+type Response_History {
+	data: [BaseHistory]
+}
 
-input BaseHistoryInput {
+
+input HistoryInput {
 	id: ID,
 	email: String,
-	action: String,
+	title: String,
 	timeOfAction: DateTime
 }
+

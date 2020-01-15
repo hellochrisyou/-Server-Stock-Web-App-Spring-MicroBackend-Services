@@ -16,6 +16,7 @@ import com.google.common.io.Resources;
 
 import graphql.GraphQL;
 import graphql.scalars.ExtendedScalars;
+import graphql.schema.DataFetcher;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
@@ -25,7 +26,7 @@ import graphql.schema.idl.TypeDefinitionRegistry;
 @Component
 public class GraphQLProvider {
 
-	public GraphQL graphQL;
+	private GraphQL graphQL;
 
 	@Autowired
 	GraphQLDataFetchers graphQLDataFetchers;
@@ -41,16 +42,10 @@ public class GraphQLProvider {
 		return RuntimeWiring.newRuntimeWiring()
 				.scalar(ExtendedScalars.DateTime)
 				.type(newTypeWiring("Query")
-				.dataFetcher("getAllActivityHistory", graphQLDataFetchers.getAllActivityHistory())
-				.dataFetcher("getAllSearchHistory", graphQLDataFetchers.getAllSearchHistory()))
+				.dataFetcher("getAllHistory", graphQLDataFetchers.getAllHistory()))
 				.type(newTypeWiring("Mutation")
-				.dataFetcher("addActivityHistory", graphQLDataFetchers.addActivityHistory())
-				.dataFetcher("updateActivityHistory", graphQLDataFetchers.updateActivityHistory())
-				.dataFetcher("removeActivityHistory", graphQLDataFetchers.removeActivityHistory())
-				.dataFetcher("addSearchHistory", graphQLDataFetchers.addSearchHistory())
-				.dataFetcher("updateSearchHistory", graphQLDataFetchers.updateSearchHistory())
-				.dataFetcher("removeSearchHistory", graphQLDataFetchers.removeSearchHistory()))
-				
+				.dataFetcher("addHistory", graphQLDataFetchers.addHistories())
+				.dataFetcher("clearHistory", graphQLDataFetchers.clearHistory()))				
 				.build();
 
 	}
