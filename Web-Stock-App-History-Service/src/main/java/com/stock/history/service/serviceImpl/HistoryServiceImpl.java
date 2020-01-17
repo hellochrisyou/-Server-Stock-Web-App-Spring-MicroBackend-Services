@@ -33,7 +33,7 @@ public class HistoryServiceImpl implements HistoryService {
 			tmpHistory.setEmail(key);
 			tmpHistory.setTitle("title");
 			tmpHistory.setType("type");
-			tmpHistory.setDateRecorded();
+//			tmpHistory.setDateRecorded();
 			this.historyRepository.save(tmpHistory);
 	    }
 		return tmpHistory;

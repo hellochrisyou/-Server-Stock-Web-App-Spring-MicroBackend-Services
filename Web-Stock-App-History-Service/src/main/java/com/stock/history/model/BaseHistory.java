@@ -15,7 +15,7 @@ public class BaseHistory {
 	public String email = "";
 	public String title = "";
 	public String type = "";
-	public Date dateRecorded;
+//	public Date dateRecorded;
 	
 	public BaseHistory(){}
 
@@ -24,7 +24,7 @@ public class BaseHistory {
 		this.id = id;
 		this.email = email;
 		this.type = type;
-		this.dateRecorded = dateRecorded;
+//		this.dateRecorded = dateRecorded;
 	}
 	
 	public BaseHistory(BaseHistory baseHistory) {
@@ -32,7 +32,7 @@ public class BaseHistory {
 		this.id = baseHistory.getId();
 		this.email = baseHistory.getEmail();
 		this.type = baseHistory.getType();
-		this.dateRecorded = baseHistory.getDateRecorded();
+//		this.dateRecorded = baseHistory.getDateRecorded();
 	}
 
 	public long getId() {
@@ -67,20 +67,20 @@ public class BaseHistory {
 		this.type = type;
 	}
 
-	public Date getDateRecorded() {
-		return dateRecorded;
-	}
-
-	public void setDateRecorded() {
-		this.dateRecorded = Calendar.getInstance().getTime();
-
-	}
-
-	@Override
-	public String toString() {
-		return "BaseHistory [id=" + id + ", email=" + email + ", title=" + title + ", type=" + type + ", dateRecorded="
-				+ dateRecorded + "]";
-	}
+//	public Date getDateRecorded() {
+//		return dateRecorded;
+//	}
+//
+//	public void setDateRecorded() {
+//		this.dateRecorded = Calendar.getInstance().getTime();
+//
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "BaseHistory [id=" + id + ", email=" + email + ", title=" + title + ", type=" + type + ", dateRecorded="
+//				+ dateRecorded + "]";
+//	}
 
 	
 	
