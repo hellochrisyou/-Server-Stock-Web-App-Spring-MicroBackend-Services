@@ -6,12 +6,12 @@ schema{
 scalar DateTime
 
 type Query {
-	findAllHistory(email: String): Response_History
+	findAllHistory(email: String): [BaseHistory]
 }
 
 type Mutation {
-	addHistory(history: [HistoryInput]): Response_History
-	clearHistory(email: String, type: String): Response_History
+	addHistory(history: [HistoryInput]): BaseHistory
+	clearHistory(email: String, type: String): [BaseHistory]
 }
 
 type BaseHistory {
@@ -19,10 +19,11 @@ type BaseHistory {
 	email: String,
 	title: String,
 	type: String,
-	dateRecorded: DateTime
+	
 }
 
 type Response_History {
+	id: ID,
 	data: [BaseHistory]
 }
 
@@ -31,6 +32,6 @@ input HistoryInput {
 	email: String,
 	title: String,
 	type: String,	
-	dateRecorded: DateTime
+	
 }
 
