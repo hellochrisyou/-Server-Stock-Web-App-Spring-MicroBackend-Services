@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class BaseHistory {
 		
 	@Id
-	public long  id;	
+	public String  id;	
 	public String email = "";
 	public String title = "";
 	public String type = "";
@@ -19,7 +19,7 @@ public class BaseHistory {
 	
 	public BaseHistory(){}
 
-	public BaseHistory(final long id, final String email, final String type, final Date dateRecorded) {
+	public BaseHistory(final String id, final String email, final String type, final Date dateRecorded) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -35,11 +35,11 @@ public class BaseHistory {
 //		this.dateRecorded = baseHistory.getDateRecorded();
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(final long id) {
+	public void setId(final String id) {
 		this.id = id;
 	}
 
