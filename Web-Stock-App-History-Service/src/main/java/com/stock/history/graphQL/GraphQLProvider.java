@@ -16,7 +16,6 @@ import com.google.common.io.Resources;
 
 import graphql.GraphQL;
 import graphql.scalars.ExtendedScalars;
-import graphql.schema.DataFetcher;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
@@ -26,10 +25,10 @@ import graphql.schema.idl.TypeDefinitionRegistry;
 @Component
 public class GraphQLProvider {
 
-	private GraphQL graphQL;
+	public GraphQL graphQL;
 
 	@Autowired
-	GraphQLDataFetchers graphQLDataFetchers;
+	GraphQLDataFetcher graphQLDataFetcher;
 
 	private GraphQLSchema buildSchema(String sdl) {
 		TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(sdl);
@@ -42,10 +41,10 @@ public class GraphQLProvider {
 		return RuntimeWiring.newRuntimeWiring()
 				.scalar(ExtendedScalars.DateTime)
 				.type(newTypeWiring("Query")
-				.dataFetcher("getAllHistory", graphQLDataFetchers.getAllHistory()))
+				.dataFetcher("findAllHistory", graphQLDataFetcher.findAllHistory()))
 				.type(newTypeWiring("Mutation")
-				.dataFetcher("addHistory", graphQLDataFetchers.addHistories())
-				.dataFetcher("clearHistory", graphQLDataFetchers.clearHistory()))				
+				.dataFetcher("addHistory", graphQLDataFetcher.addHistory())
+				.dataFetcher("clearHistory", graphQLDataFetcher.clearHistory()))
 				.build();
 
 	}

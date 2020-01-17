@@ -3,34 +3,34 @@ schema{
  mutation : Mutation
 }
 
+scalar DateTime
+
 type Query {
-	getAllHistory(inputEmail: String]): BaseHistory
+	findAllHistory(email: String): Response_History
 }
 
 type Mutation {
-	addHistories(historyInput: [HistoryInput]): Response_History
-	clearHistory
-	
+	addHistory(history: [HistoryInput]): Response_History
+	clearHistory(email: String, type: String): Response_History
 }
-
-scalar DateTime
 
 type BaseHistory {
 	id: ID,
 	email: String,
-	action: String,
-	timeOfAction: DateTime
+	title: String,
+	type: String,
+	dateRecorded: DateTime
 }
 
 type Response_History {
 	data: [BaseHistory]
 }
 
-
 input HistoryInput {
 	id: ID,
 	email: String,
 	title: String,
-	timeOfAction: DateTime
+	type: String,	
+	dateRecorded: DateTime
 }
 

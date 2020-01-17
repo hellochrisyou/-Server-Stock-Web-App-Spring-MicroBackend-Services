@@ -1,16 +1,12 @@
 package com.stock.history;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.stock.history.repository.HistoryRepository;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@EnableMongoRepositories(basePackageClasses = {HistoryRepository.class})
-@EnableAutoConfiguration(exclude={MongoAutoConfiguration.class})
+@ComponentScan(basePackages = "com.stock.history")
 public class WebStockAppHistoryServiceApplication {
 
 	public static void main(String[] args) {
