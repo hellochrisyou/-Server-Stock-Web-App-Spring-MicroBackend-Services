@@ -2,8 +2,6 @@ package com.stock.history.service.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,36 +23,23 @@ public class HistoryServiceImpl implements HistoryService {
 	}
 	
 	@Override
-	public BaseHistory addHistory(final List<Map<String, Object>> history) {				
-		BaseHistory tmpHistory = new BaseHistory();
-		for(Map<String, Object> e : history) {
-	        tmpHistory = new BaseHistory();
-			String key = e.get("email").toString();
-			tmpHistory.setEmail(key);
-			tmpHistory.setTitle("title");
-			tmpHistory.setType("type");
-//			tmpHistory.setDateRecorded();
-			this.historyRepository.save(tmpHistory);
-	    }
+	public BaseHistory addHistory(BaseHistory history) {
+		BaseHistory tmpHistory = new BaseHistory(history);
+			historyRepository.save(tmpHistory);
 		return tmpHistory;
 	}
 
 	@Override
-	public List<BaseHistory> clearHistory(final String email, final String type) {	
-		List<BaseHistory> tmpBaseHistories = this.findAllHistory(email);
+	public List<BaseHistory> clearHistory(BaseHistory history) {
+		List<BaseHistory> tmpBaseHistories = this.findAllHistory(history.getEmail());
 		List<BaseHistory> baseHistories = new ArrayList<>();
 		for (BaseHistory tmpHistory : tmpBaseHistories) {
-			if (tmpHistory.getType().equals(type)); {
+			if (tmpHistory.getType().equals(history.getType())); {
 				baseHistories.add(tmpHistory);
 			}
 		}
 		historyRepository.deleteAll(baseHistories);
 		return baseHistories;
 	}
-
-	
-
-
-
 }
 
