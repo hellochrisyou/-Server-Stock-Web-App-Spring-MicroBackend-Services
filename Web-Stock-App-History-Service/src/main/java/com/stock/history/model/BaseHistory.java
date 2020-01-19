@@ -1,7 +1,7 @@
 package com.stock.history.model;
 
-import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class BaseHistory {
 		
 	@Id
-	public long  id;	
+	public String  id;	
 	public String email = "";
 	public String title = "";
 	public String type = "";
@@ -19,27 +19,26 @@ public class BaseHistory {
 	
 	public BaseHistory(){}
 
-	public BaseHistory(final long id, final String email, final String type, final Date dateRecorded) {
-		super();
+	public BaseHistory(final String id, final String email, final String type, final Date dateRecorded) {
 		this.id = id;
 		this.email = email;
 		this.type = type;
 //		this.dateRecorded = dateRecorded;
 	}
 	
-	public BaseHistory(BaseHistory baseHistory) {
-		super();
-		this.id = baseHistory.getId();
-		this.email = baseHistory.getEmail();
-		this.type = baseHistory.getType();
+	public BaseHistory(BaseHistory history) {
+		this.email = history.getEmail();
+		this.title = history.getTitle();
+		this.type = history.getType();
 //		this.dateRecorded = baseHistory.getDateRecorded();
 	}
 
-	public long getId() {
+	
+	public String getId() {
 		return id;
 	}
 
-	public void setId(final long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

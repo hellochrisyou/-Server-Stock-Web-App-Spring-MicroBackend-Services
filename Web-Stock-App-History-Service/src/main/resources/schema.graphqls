@@ -10,7 +10,7 @@ type Query {
 }
 
 type Mutation {
-	addHistory(history: [HistoryInput]): BaseHistory
+	addHistory(email: String, title: String, type: String): BaseHistory
 	clearHistory(email: String, type: String): [BaseHistory]
 }
 
@@ -18,20 +18,13 @@ type BaseHistory {
 	id: ID,
 	email: String,
 	title: String,
-	type: String,
-	
-}
-
-type Response_History {
-	id: ID,
-	data: [BaseHistory]
+	type: String
 }
 
 input HistoryInput {
 	id: ID,
 	email: String,
 	title: String,
-	type: String,	
-	
+	type: String,
 }
 
