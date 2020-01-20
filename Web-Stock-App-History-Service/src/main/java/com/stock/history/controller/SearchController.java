@@ -22,7 +22,6 @@ public class SearchController {
 	@Autowired
 	SearchService historyService;
 	
-	@CrossOrigin
 	@RequestMapping(value = "/findSearchHistory/", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<SearchHistory> findSearchHistory(@RequestBody String email) {
@@ -30,7 +29,6 @@ public class SearchController {
 		return check;
 	}
 	
-	@CrossOrigin
 	@RequestMapping(value = "/addSearchHistory", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public SearchHistory addSearchHistory(@RequestBody SearchHistory history) {
@@ -38,7 +36,6 @@ public class SearchController {
 		return check;
 	}
 		
-	@CrossOrigin
 	@RequestMapping(value = "/deleteSearchHistory", method = RequestMethod.DELETE,
 			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void clearSearchHistory(@RequestBody SearchHistory history) {
