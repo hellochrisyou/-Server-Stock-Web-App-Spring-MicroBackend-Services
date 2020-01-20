@@ -10,7 +10,7 @@ public interface StockService {
 
 	public List<Stock>findStocks(final String email);
 	
-	public Stock addStock(final Stock stock);
+	public Stock addStock(final Object stock);
 	
 	public Stock deleteStock(final Stock stock);
 	

@@ -24,7 +24,7 @@ public class StockServiceImpl implements StockService {
 	}
 
 	@Override
-	public Stock addStock(Stock stock) {
+	public Stock addStock(Object stock) {
 		Stock tmpStock= new Stock(stock);
 		stockRepository.save(tmpStock);
 	return tmpStock;

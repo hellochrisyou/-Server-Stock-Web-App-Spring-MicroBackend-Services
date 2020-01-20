@@ -10,36 +10,45 @@ public class Stock {
 	private String Symbol;	
 	private String Exchange;
 	private String Name;
-	private String Open;
-	private String Low;
-	private String High;
-	private String LatestPrice;
-	private String Change;
-	private String ChangePercent;	
-	private String Week52High;
-	private String Week52Low;
-	private String YtdChange;
+	private double Open;
+	private double Low;
+	private double High;
+	private double LatestPrice;
+	private double Change;
+	private double ChangePercent;
+	private int stateId;
+	private double Week52High;
+	private double Week52Low;
+	private double YtdChange;
 
 	public Stock() {
 	}
 
-	public Stock(Stock stock) {
-		this.Change = stock.getChange();
-		this.ChangePercent = stock.getChangePercent();
-		this.email = stock.getEmail(); 
-		this.Exchange = stock.getExchange();
-		this.High = stock.getHigh();
-		this.LatestPrice = stock.getLatestPrice();
-		this.Low = stock.getLow();
-		this.Name = stock.getName();
-		this.Open = stock.getOpen();
-		this.Symbol = stock.getSymbol();
-		this.Week52High = stock.getWeek52High();
-		this.Week52Low = stock.getWeek52Low();
-		this.YtdChange = stock.getYtdChange();
-
+	public Stock(Object stock) {
+		Map check = (Map) stock;
+		this.Change = asDouble(check.get("Change"));
+		this.ChangePercent = asDouble(check.get("ChangePercent")); 
+		this.email =  (String) check.get("email");
+		this.Exchange = (String) check.get("Exchange");
+		this.High = asDouble(check.get("High"));
+		this.LatestPrice = asDouble(check.get("LatestPrice"));
+		this.Low = asDouble(check.get("Low"));
+		this.Name = (String) check.get("Name");
+		this.Open = asDouble(check.get("Open"));
+		this.Symbol = (String) check.get("Symbol");
+		this.Week52High = asDouble(check.get("Week52High"));
+		this.Week52Low = asDouble(check.get("Week52Low"));
+		this.YtdChange =asDouble(check.get("YtdChange"));
 	}
 
+	Double asDouble(Object o) {
+	    Double val = null;
+	    if (o instanceof Number) {
+	        val = ((Number) o).doubleValue();
+	    }
+	    return val;
+	}
+	
 	public String getSelect() {
 		return Select;
 	}
@@ -80,78 +89,6 @@ public class Stock {
 		Name = name;
 	}
 
-	public String getOpen() {
-		return Open;
-	}
-
-	public void setOpen(String open) {
-		Open = open;
-	}
-
-	public String getLow() {
-		return Low;
-	}
-
-	public void setLow(String low) {
-		Low = low;
-	}
-
-	public String getHigh() {
-		return High;
-	}
-
-	public void setHigh(String high) {
-		High = high;
-	}
-
-	public String getLatestPrice() {
-		return LatestPrice;
-	}
-
-	public void setLatestPrice(String latestPrice) {
-		LatestPrice = latestPrice;
-	}
-
-	public String getChange() {
-		return Change;
-	}
-
-	public void setChange(String change) {
-		Change = change;
-	}
-
-	public String getChangePercent() {
-		return ChangePercent;
-	}
-
-	public void setChangePercent(String changePercent) {
-		ChangePercent = changePercent;
-	}
-
-	public String getWeek52High() {
-		return Week52High;
-	}
-
-	public void setWeek52High(String week52High) {
-		Week52High = week52High;
-	}
-
-	public String getWeek52Low() {
-		return Week52Low;
-	}
-
-	public void setWeek52Low(String week52Low) {
-		Week52Low = week52Low;
-	}
-
-	public String getYtdChange() {
-		return YtdChange;
-	}
-
-	public void setYtdChange(String ytdChange) {
-		YtdChange = ytdChange;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -160,6 +97,85 @@ public class Stock {
 		this.email = email;
 	}
 
-	
+	public double getOpen() {
+		return Open;
+	}
 
+	public void setOpen(double open) {
+		Open = open;
+	}
+
+	public double getLow() {
+		return Low;
+	}
+
+	public void setLow(double low) {
+		Low = low;
+	}
+
+	public double getHigh() {
+		return High;
+	}
+
+	public void setHigh(double high) {
+		High = high;
+	}
+
+	public double getLatestPrice() {
+		return LatestPrice;
+	}
+
+	public void setLatestPrice(double latestPrice) {
+		LatestPrice = latestPrice;
+	}
+
+	public double getChange() {
+		return Change;
+	}
+
+	public void setChange(double change) {
+		Change = change;
+	}
+
+	public double getChangePercent() {
+		return ChangePercent;
+	}
+
+	public void setChangePercent(double changePercent) {
+		ChangePercent = changePercent;
+	}
+
+	public int getStateId() {
+		return stateId;
+	}
+
+	public void setStateId(int stateId) {
+		this.stateId = stateId;
+	}
+
+	public double getWeek52High() {
+		return Week52High;
+	}
+
+	public void setWeek52High(double week52High) {
+		Week52High = week52High;
+	}
+
+	public double getWeek52Low() {
+		return Week52Low;
+	}
+
+	public void setWeek52Low(double week52Low) {
+		Week52Low = week52Low;
+	}
+
+	public double getYtdChange() {
+		return YtdChange;
+	}
+
+	public void setYtdChange(double ytdChange) {
+		YtdChange = ytdChange;
+	}
+
+	
 }
