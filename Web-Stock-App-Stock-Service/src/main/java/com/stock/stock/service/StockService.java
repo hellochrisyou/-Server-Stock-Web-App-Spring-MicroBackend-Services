@@ -8,7 +8,7 @@ import com.stock.stock.model.Stock;
 
 public interface StockService {
 
-	public List<Stock>findStocks(final String email);
+	public List<Stock>findStocks(final Object email);
 	
 	public Stock addStock(final Object stock);
 	

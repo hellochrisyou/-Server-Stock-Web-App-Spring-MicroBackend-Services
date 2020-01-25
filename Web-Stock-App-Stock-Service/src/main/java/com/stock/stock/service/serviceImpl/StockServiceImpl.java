@@ -18,9 +18,10 @@ public class StockServiceImpl implements StockService {
 	StockRepository stockRepository;
 	
 	@Override
-	public List<Stock> findStocks(String email) {
-		 List<Stock> check = (List<Stock>) stockRepository.findByEmail(email);
-	        return check;
+	public List<Stock> findStocks(Object email) {
+		Map stockMap = (Map) email;
+		List<Stock> check = (List<Stock>) stockRepository.findByEmail((String) stockMap.get("jsonString"));
+        return check;
 	}
 
 	@Override

@@ -25,28 +25,34 @@ public class Stock {
 	}
 
 	public Stock(Object stock) {
-		Map check = (Map) stock;
-		this.Change = asDouble(check.get("Change"));
-		this.ChangePercent = asDouble(check.get("ChangePercent")); 
-		this.email =  (String) check.get("email");
-		this.Exchange = (String) check.get("Exchange");
-		this.High = asDouble(check.get("High"));
-		this.LatestPrice = asDouble(check.get("LatestPrice"));
-		this.Low = asDouble(check.get("Low"));
-		this.Name = (String) check.get("Name");
-		this.Open = asDouble(check.get("Open"));
-		this.Symbol = (String) check.get("Symbol");
-		this.Week52High = asDouble(check.get("Week52High"));
-		this.Week52Low = asDouble(check.get("Week52Low"));
-		this.YtdChange =asDouble(check.get("YtdChange"));
+		Map stockMap = (Map) stock;
+		this.Change = stockMap.get("Change") != null ? asDouble(stockMap.get("Change")): Double.NaN;		
+		this.ChangePercent = stockMap.get("ChangePercent") != null ? asDouble(stockMap.get("ChangePercent")): Double.NaN;		 
+		this.email =  (String) stockMap.get("email");
+		this.Exchange = (String) stockMap.get("Exchange");
+		this.High = stockMap.get("High") != null ? asDouble(stockMap.get("High")): Double.NaN;	
+		this.LatestPrice = stockMap.get("LatestPrice") != null ? asDouble(stockMap.get("LatestPrice")): Double.NaN;	
+		this.Low = stockMap.get("Low") != null ? asDouble(stockMap.get("Low")): Double.NaN;	
+		this.Name = (String) stockMap.get("Name");
+		this.Open = stockMap.get("Open") != null ? asDouble(stockMap.get("Open")): Double.NaN;	
+		this.Symbol = (String) stockMap.get("Symbol");
+		this.Week52High = stockMap.get("Week52High") != null ? asDouble(stockMap.get("Week52High")): Double.NaN;	
+		this.Week52Low = stockMap.get("Week52Low") != null ? asDouble(stockMap.get("Week52Low")): Double.NaN;	
+		this.YtdChange = stockMap.get("YtdChange") != null ? asDouble(stockMap.get("YtdChange")): Double.NaN;	
 	}
 
 	Double asDouble(Object o) {
+		if (o != null) {
 	    Double val = null;
 	    if (o instanceof Number) {
 	        val = ((Number) o).doubleValue();
 	    }
 	    return val;
+	    } else {
+	    	return null;
+	    }
+	    	
+		
 	}
 	
 	public String getSelect() {

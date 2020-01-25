@@ -23,8 +23,9 @@ public class StockController {
 	
 	@CrossOrigin
 	@PostMapping(value = "/findStocks/", consumes = "application/json", produces = "application/json")
-	public List<Stock> findStocks(@RequestBody String email) {
-		return stockService.findStocks(email);
+	public List<Stock> findStocks(@RequestBody Object email) {
+		List<Stock> tmp =  stockService.findStocks(email);
+		return tmp;	
 	}
 	
 	@CrossOrigin	
