@@ -24,7 +24,7 @@ public class Stock {
 	public Stock() {
 	}
 
-	public Stock(Map stockMap) {
+	public Stock(@SuppressWarnings("rawtypes") Map stockMap) {
 		this.change = stockMap.get("change") != null ? asDouble(stockMap.get("change")): Double.NaN;		
 		this.changePercent = stockMap.get("changePercent") != null ? asDouble(stockMap.get("changePercent")): Double.NaN;		 
 		this.email =  (String) stockMap.get("email");
