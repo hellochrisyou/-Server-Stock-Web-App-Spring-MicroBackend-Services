@@ -12,7 +12,7 @@ public interface StockService {
 	
 	public Stock addStock(final Object stock);
 	
-	public Stock deleteStock(final Stock stock);
+	public void deleteStock	(final Object symbolObj);
 	
 	public List<Stock> clearStocks(final Stock stock);
 }

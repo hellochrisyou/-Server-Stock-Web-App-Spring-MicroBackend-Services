@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stock.stock.model.Stock;
@@ -33,6 +34,12 @@ public class StockController {
 	public Stock addStock(@RequestBody Object stock) {
 		Stock check = stockService.addStock(stock);
 		return check;
+	}
+	
+	@CrossOrigin	
+	@PostMapping(value = "/deleteStock/", consumes = "application/json", produces = "application/json")
+	public void deleteStock(@RequestBody Object symbolObj) {
+		stockService.deleteStock(symbolObj);
 	}
 	
 	@CrossOrigin

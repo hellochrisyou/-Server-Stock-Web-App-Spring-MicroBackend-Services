@@ -32,9 +32,11 @@ public class StockServiceImpl implements StockService {
 	}
 
 	@Override
-	public Stock deleteStock(Stock stock) {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteStock(Object symbolObj) {
+		Map symbolMap = (Map) symbolObj;
+		Stock stock = stockRepository.findBySymbol((String) symbolMap.get("jsonString"));
+		stockRepository.delete(stock);
+		return;
 	}
 
 	@Override
