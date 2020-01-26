@@ -19,23 +19,33 @@ public class StockServiceImpl implements StockService {
 	
 	@Override
 	public List<Stock> findStocks(Object email) {
+//		stockRepository.deleteAll();
+		@SuppressWarnings("rawtypes")
 		Map stockMap = (Map) email;
 		List<Stock> check = (List<Stock>) stockRepository.findByEmail((String) stockMap.get("jsonString"));
         return check;
 	}
 
 	@Override
-	public Stock addStock(Object stock) {
-		Stock tmpStock= new Stock(stock);
-		stockRepository.save(tmpStock);
-	return tmpStock;
+	public Stock addStock(Object stockObj) {
+		@SuppressWarnings("rawtypes")
+		Map stockMap = (Map) stockObj;
+		if (stockRepository.findBySymbol((String) stockMap.get("symbol")) == null) {
+			Stock tmpStock= new Stock(stockMap);
+			tmpStock = stockRepository.save(tmpStock);
+			return tmpStock;
+		} else {
+			return null;
+		}
+			
 	}
 
 	@Override
 	public void deleteStock(Object symbolObj) {
+		@SuppressWarnings("rawtypes")
 		Map symbolMap = (Map) symbolObj;
-		Stock stock = stockRepository.findBySymbol((String) symbolMap.get("jsonString"));
-		stockRepository.delete(stock);
+//		Stock stock = stockRepository.findBySymbol((String) symbolMap.get("jsonString"));
+		stockRepository.deleteBySymbol((String) symbolMap.get("jsonString"));
 		return;
 	}
 

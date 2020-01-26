@@ -31,20 +31,20 @@ public class StockController {
 	
 	@CrossOrigin	
 	@PostMapping(value = "/addStock/", consumes = "application/json", produces = "application/json")
-	public Stock addStock(@RequestBody Object stock) {
-		Stock check = stockService.addStock(stock);
-		return check;
+	public Stock addStock(@RequestBody Object stockObj) {
+		Stock check = stockService.addStock(stockObj);
+		return check;		
 	}
 	
 	@CrossOrigin	
 	@PostMapping(value = "/deleteStock/", consumes = "application/json", produces = "application/json")
-	public void deleteStock(@RequestBody Object symbolObj) {
-		stockService.deleteStock(symbolObj);
+	public void deleteStock(@RequestBody Object stockObj) {
+		stockService.deleteStock(stockObj);
 	}
 	
 	@CrossOrigin
 	@DeleteMapping(value = "/clearStocks/", consumes = "application/json", produces = "application/json")
-	public List<Stock> clearStocks(@RequestBody Stock stock) {
-		return stockService.clearStocks(stock);
+	public List<Stock> clearStocks(@RequestBody Stock stockObj) {
+		return stockService.clearStocks(stockObj);
 	}
 }
