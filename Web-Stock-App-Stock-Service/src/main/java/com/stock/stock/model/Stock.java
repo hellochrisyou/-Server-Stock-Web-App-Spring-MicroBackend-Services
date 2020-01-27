@@ -10,34 +10,34 @@ public class Stock {
 	private String symbol;	
 	private String exchange;
 	private String name;
-	private double open;
-	private double low;
-	private double high;
-	private double latestPrice;
-	private double change;
-	private double changePercent;
-	private int stateId;
-	private double week52High;
-	private double week52Low;
-	private double ytdChange;
+	private String open;
+	private String low;
+	private String high;
+	private String latestPrice;
+	private String change;
+	private String changePercent;
+	private String stateId;
+	private String week52High;
+	private String week52Low;
+	private String ytdChange;
 
 	public Stock() {
 	}
 
 	public Stock(@SuppressWarnings("rawtypes") Map stockMap) {
-		this.change = stockMap.get("change") != null ? asDouble(stockMap.get("change")): Double.NaN;		
-		this.changePercent = stockMap.get("changePercent") != null ? asDouble(stockMap.get("changePercent")): Double.NaN;		 
+		this.change = stockMap.get("change") != null ? asDouble(stockMap.get("change")).toString(): "n/a";		
+		this.changePercent = stockMap.get("changePercent") != null ? asDouble(stockMap.get("changePercent")).toString(): "n/a";			 
 		this.email =  (String) stockMap.get("email");
 		this.exchange = (String) stockMap.get("exchange");
-		this.high = stockMap.get("high") != null ? asDouble(stockMap.get("high")): Double.NaN;	
-		this.latestPrice = stockMap.get("latestPrice") != null ? asDouble(stockMap.get("latestPrice")): Double.NaN;	
-		this.low = stockMap.get("low") != null ? asDouble(stockMap.get("low")): Double.NaN;	
+		this.high = stockMap.get("high").toString();	
+		this.latestPrice = stockMap.get("latestPrice").toString();
+		this.low = stockMap.get("low").toString();
 		this.name = (String) stockMap.get("name");
-		this.open = stockMap.get("open") != null ? asDouble(stockMap.get("open")): Double.NaN;	
+		this.open = stockMap.get("open").toString();
 		this.symbol = (String) stockMap.get("symbol");
-		this.week52High = stockMap.get("week52High") != null ? asDouble(stockMap.get("week52High")): Double.NaN;	
-		this.week52Low = stockMap.get("week52Low") != null ? asDouble(stockMap.get("week52Low")): Double.NaN;	
-		this.ytdChange = stockMap.get("ytdChange") != null ? asDouble(stockMap.get("ytdChange")): Double.NaN;	
+		this.week52High = stockMap.get("week52High").toString();	
+		this.week52Low = stockMap.get("week52Low").toString();	
+		this.ytdChange = stockMap.get("ytdChange").toString();	
 	}
 
 	Double asDouble(Object o) {
@@ -102,83 +102,83 @@ public class Stock {
 		this.name = name;
 	}
 
-	public double getOpen() {
+	public String getOpen() {
 		return open;
 	}
 
-	public void setOpen(double open) {
+	public void setOpen(String open) {
 		this.open = open;
 	}
 
-	public double getLow() {
+	public String getLow() {
 		return low;
 	}
 
-	public void setLow(double low) {
+	public void setLow(String low) {
 		this.low = low;
 	}
 
-	public double getHigh() {
+	public String getHigh() {
 		return high;
 	}
 
-	public void setHigh(double high) {
+	public void setHigh(String high) {
 		this.high = high;
 	}
 
-	public double getLatestPrice() {
+	public String getLatestPrice() {
 		return latestPrice;
 	}
 
-	public void setLatestPrice(double latestPrice) {
+	public void setLatestPrice(String latestPrice) {
 		this.latestPrice = latestPrice;
 	}
 
-	public double getChange() {
+	public String getChange() {
 		return change;
 	}
 
-	public void setChange(double change) {
+	public void setChange(String change) {
 		this.change = change;
 	}
 
-	public double getChangePercent() {
+	public String getChangePercent() {
 		return changePercent;
 	}
 
-	public void setChangePercent(double changePercent) {
+	public void setChangePercent(String changePercent) {
 		this.changePercent = changePercent;
 	}
 
-	public int getStateId() {
+	public String getStateId() {
 		return stateId;
 	}
 
-	public void setStateId(int stateId) {
+	public void setStateId(String stateId) {
 		this.stateId = stateId;
 	}
 
-	public double getWeek52High() {
+	public String getWeek52High() {
 		return week52High;
 	}
 
-	public void setWeek52High(double week52High) {
+	public void setWeek52High(String week52High) {
 		this.week52High = week52High;
 	}
 
-	public double getWeek52Low() {
+	public String getWeek52Low() {
 		return week52Low;
 	}
 
-	public void setWeek52Low(double week52Low) {
+	public void setWeek52Low(String week52Low) {
 		this.week52Low = week52Low;
 	}
 
-	public double getYtdChange() {
+	public String getYtdChange() {
 		return ytdChange;
 	}
 
-	public void setYtdChange(double ytdChange) {
+	public void setYtdChange(String ytdChange) {
 		this.ytdChange = ytdChange;
 	}
 
@@ -188,30 +188,20 @@ public class Stock {
 		int result = 1;
 		result = prime * result + ((Chart == null) ? 0 : Chart.hashCode());
 		result = prime * result + ((Select == null) ? 0 : Select.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(change);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(changePercent);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((change == null) ? 0 : change.hashCode());
+		result = prime * result + ((changePercent == null) ? 0 : changePercent.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((exchange == null) ? 0 : exchange.hashCode());
-		temp = Double.doubleToLongBits(high);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(latestPrice);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(low);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((high == null) ? 0 : high.hashCode());
+		result = prime * result + ((latestPrice == null) ? 0 : latestPrice.hashCode());
+		result = prime * result + ((low == null) ? 0 : low.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		temp = Double.doubleToLongBits(open);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + stateId;
+		result = prime * result + ((open == null) ? 0 : open.hashCode());
+		result = prime * result + ((stateId == null) ? 0 : stateId.hashCode());
 		result = prime * result + ((symbol == null) ? 0 : symbol.hashCode());
-		temp = Double.doubleToLongBits(week52High);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(week52Low);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(ytdChange);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((week52High == null) ? 0 : week52High.hashCode());
+		result = prime * result + ((week52Low == null) ? 0 : week52Low.hashCode());
+		result = prime * result + ((ytdChange == null) ? 0 : ytdChange.hashCode());
 		return result;
 	}
 
@@ -234,9 +224,15 @@ public class Stock {
 				return false;
 		} else if (!Select.equals(other.Select))
 			return false;
-		if (Double.doubleToLongBits(change) != Double.doubleToLongBits(other.change))
+		if (change == null) {
+			if (other.change != null)
+				return false;
+		} else if (!change.equals(other.change))
 			return false;
-		if (Double.doubleToLongBits(changePercent) != Double.doubleToLongBits(other.changePercent))
+		if (changePercent == null) {
+			if (other.changePercent != null)
+				return false;
+		} else if (!changePercent.equals(other.changePercent))
 			return false;
 		if (email == null) {
 			if (other.email != null)
@@ -248,43 +244,58 @@ public class Stock {
 				return false;
 		} else if (!exchange.equals(other.exchange))
 			return false;
-		if (Double.doubleToLongBits(high) != Double.doubleToLongBits(other.high))
+		if (high == null) {
+			if (other.high != null)
+				return false;
+		} else if (!high.equals(other.high))
 			return false;
-		if (Double.doubleToLongBits(latestPrice) != Double.doubleToLongBits(other.latestPrice))
+		if (latestPrice == null) {
+			if (other.latestPrice != null)
+				return false;
+		} else if (!latestPrice.equals(other.latestPrice))
 			return false;
-		if (Double.doubleToLongBits(low) != Double.doubleToLongBits(other.low))
+		if (low == null) {
+			if (other.low != null)
+				return false;
+		} else if (!low.equals(other.low))
 			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (Double.doubleToLongBits(open) != Double.doubleToLongBits(other.open))
+		if (open == null) {
+			if (other.open != null)
+				return false;
+		} else if (!open.equals(other.open))
 			return false;
-		if (stateId != other.stateId)
+		if (stateId == null) {
+			if (other.stateId != null)
+				return false;
+		} else if (!stateId.equals(other.stateId))
 			return false;
 		if (symbol == null) {
 			if (other.symbol != null)
 				return false;
 		} else if (!symbol.equals(other.symbol))
 			return false;
-		if (Double.doubleToLongBits(week52High) != Double.doubleToLongBits(other.week52High))
+		if (week52High == null) {
+			if (other.week52High != null)
+				return false;
+		} else if (!week52High.equals(other.week52High))
 			return false;
-		if (Double.doubleToLongBits(week52Low) != Double.doubleToLongBits(other.week52Low))
+		if (week52Low == null) {
+			if (other.week52Low != null)
+				return false;
+		} else if (!week52Low.equals(other.week52Low))
 			return false;
-		if (Double.doubleToLongBits(ytdChange) != Double.doubleToLongBits(other.ytdChange))
+		if (ytdChange == null) {
+			if (other.ytdChange != null)
+				return false;
+		} else if (!ytdChange.equals(other.ytdChange))
 			return false;
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Stock [Select=" + Select + ", Chart=" + Chart + ", email=" + email + ", symbol=" + symbol
-				+ ", exchange=" + exchange + ", name=" + name + ", open=" + open + ", low=" + low + ", high=" + high
-				+ ", latestPrice=" + latestPrice + ", change=" + change + ", changePercent=" + changePercent
-				+ ", stateId=" + stateId + ", week52High=" + week52High + ", week52Low=" + week52Low + ", ytdChange="
-				+ ytdChange + "]";
-	}
-
-		
+			
 }

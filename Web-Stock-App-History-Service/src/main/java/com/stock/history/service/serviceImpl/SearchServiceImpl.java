@@ -21,8 +21,7 @@ public class SearchServiceImpl implements SearchService {
 	public List<SearchHistory> findSearchHistory(final Object email) {
 		@SuppressWarnings("rawtypes")
 		Map emailMap = (Map) email;
-        List<SearchHistory> check = (List<SearchHistory>) historyRepository.findByEmail((String) emailMap.get("jsonString"));
-        return check;
+        return (List<SearchHistory>) historyRepository.findByEmail((String) emailMap.get("jsonString"));
 	}
 	
 	@Override
@@ -33,8 +32,8 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public void clearSearchHistory(final SearchHistory history) {
-		List<SearchHistory> searchHistory = this.findSearchHistory(history.getEmail());
+	public void clearSearchHistory(final Object history) {
+		List<SearchHistory> searchHistory = this.findSearchHistory(history);
 		historyRepository.deleteAll(searchHistory);
 		return;
 	}

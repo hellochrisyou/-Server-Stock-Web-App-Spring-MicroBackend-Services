@@ -10,5 +10,5 @@ public interface SearchService {
 	
 	public SearchHistory addSearchHistory(final SearchHistory history);
 	
-	public void clearSearchHistory(final SearchHistory history);
+	public void clearSearchHistory(final Object history);
 }

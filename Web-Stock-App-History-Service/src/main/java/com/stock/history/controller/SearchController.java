@@ -36,9 +36,9 @@ public class SearchController {
 		return check;
 	}
 		
-	@RequestMapping(value = "/deleteSearchHistory", method = RequestMethod.DELETE,
+	@RequestMapping(value = "/clearSearchHistory", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public void clearSearchHistory(@RequestBody SearchHistory history) {
+	public void clearSearchHistory(@RequestBody Object history) {
 		historyService.clearSearchHistory(history);
 		return;
 	}
