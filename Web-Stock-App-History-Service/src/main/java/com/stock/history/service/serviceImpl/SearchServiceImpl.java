@@ -2,6 +2,7 @@ package com.stock.history.service.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,10 @@ public class SearchServiceImpl implements SearchService {
 	private SearchRepository historyRepository;
 	
 	@Override
-	public List<SearchHistory> findSearchHistory(final String email) {
-        List<SearchHistory> check = (List<SearchHistory>) historyRepository.findByEmail(email);
+	public List<SearchHistory> findSearchHistory(final Object email) {
+		@SuppressWarnings("rawtypes")
+		Map emailMap = (Map) email;
+        List<SearchHistory> check = (List<SearchHistory>) historyRepository.findByEmail((String) emailMap.get("jsonString"));
         return check;
 	}
 	

@@ -24,7 +24,7 @@ public class SearchController {
 	
 	@RequestMapping(value = "/findSearchHistory/", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<SearchHistory> findSearchHistory(@RequestBody String email) {
+	public List<SearchHistory> findSearchHistory(@RequestBody Object email) {
 		List<SearchHistory> check = historyService.findSearchHistory(email);
 		return check;
 	}
