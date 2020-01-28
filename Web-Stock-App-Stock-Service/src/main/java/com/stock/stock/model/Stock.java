@@ -4,8 +4,6 @@ import java.util.Map;
 
 public class Stock {
 
-	private String Select = "Select";
-	private String Chart = "Chart";	
 	private String email;
 	private String symbol;	
 	private String exchange;
@@ -24,7 +22,7 @@ public class Stock {
 	public Stock() {
 	}
 
-	public Stock(@SuppressWarnings("rawtypes") Map stockMap) {
+	public Stock(@SuppressWarnings("rawtypes") final Map stockMap) {
 		this.change = stockMap.get("change") != null ? asDouble(stockMap.get("change")).toString(): "n/a";		
 		this.changePercent = stockMap.get("changePercent") != null ? asDouble(stockMap.get("changePercent")).toString(): "n/a";			 
 		this.email =  (String) stockMap.get("email");
@@ -50,24 +48,6 @@ public class Stock {
 	    } else {
 	    	return null;
 	    }
-	    	
-		
-	}
-	
-	public String getSelect() {
-		return Select;
-	}
-
-	public void setSelect(String select) {
-		Select = select;
-	}
-
-	public String getChart() {
-		return Chart;
-	}
-
-	public void setChart(String chart) {
-		Chart = chart;
 	}
 
 	public String getEmail() {
@@ -186,8 +166,6 @@ public class Stock {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Chart == null) ? 0 : Chart.hashCode());
-		result = prime * result + ((Select == null) ? 0 : Select.hashCode());
 		result = prime * result + ((change == null) ? 0 : change.hashCode());
 		result = prime * result + ((changePercent == null) ? 0 : changePercent.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
@@ -214,16 +192,6 @@ public class Stock {
 		if (getClass() != obj.getClass())
 			return false;
 		Stock other = (Stock) obj;
-		if (Chart == null) {
-			if (other.Chart != null)
-				return false;
-		} else if (!Chart.equals(other.Chart))
-			return false;
-		if (Select == null) {
-			if (other.Select != null)
-				return false;
-		} else if (!Select.equals(other.Select))
-			return false;
 		if (change == null) {
 			if (other.change != null)
 				return false;
@@ -297,5 +265,13 @@ public class Stock {
 		return true;
 	}
 
-			
+	@Override
+	public String toString() {
+		return "Stock [email=" + email + ", symbol=" + symbol + ", exchange=" + exchange + ", name=" + name + ", open="
+				+ open + ", low=" + low + ", high=" + high + ", latestPrice=" + latestPrice + ", change=" + change
+				+ ", changePercent=" + changePercent + ", stateId=" + stateId + ", week52High=" + week52High
+				+ ", week52Low=" + week52Low + ", ytdChange=" + ytdChange + "]";
+	}
+
+	
 }

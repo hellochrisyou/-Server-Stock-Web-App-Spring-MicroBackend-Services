@@ -11,8 +11,6 @@ public interface StockRepository extends MongoRepository<Stock , String> {
 	
 	List<Stock> findByEmail(final String email);
 
-	Stock findBySymbolNull(final String symbol);
-
 	Stock findBySymbol(final String symbol);
 	
 	void deleteBySymbol(final String symbol);

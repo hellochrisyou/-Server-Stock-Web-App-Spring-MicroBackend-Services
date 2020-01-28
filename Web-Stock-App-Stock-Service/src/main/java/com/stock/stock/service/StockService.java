@@ -14,5 +14,5 @@ public interface StockService {
 	
 	public void deleteStock	(final Object symbolObj);
 	
-	public List<Stock> clearStocks(final Stock stock);
+//	public List<Stock> clearStocks(final Stock stock);
 }

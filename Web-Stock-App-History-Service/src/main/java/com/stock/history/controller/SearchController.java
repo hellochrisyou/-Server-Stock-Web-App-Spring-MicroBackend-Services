@@ -21,23 +21,20 @@ public class SearchController {
 
 	@Autowired
 	SearchService historyService;
-	
-	@RequestMapping(value = "/findSearchHistory/", method = RequestMethod.POST,
-			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@RequestMapping(value = "/findSearchHistory/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<SearchHistory> findSearchHistory(@RequestBody Object email) {
 		List<SearchHistory> check = historyService.findSearchHistory(email);
 		return check;
 	}
-	
-	@RequestMapping(value = "/addSearchHistory", method = RequestMethod.POST,
-			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@RequestMapping(value = "/addSearchHistory", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public SearchHistory addSearchHistory(@RequestBody SearchHistory history) {
 		SearchHistory check = historyService.addSearchHistory(history);
 		return check;
 	}
-		
-	@RequestMapping(value = "/clearSearchHistory", method = RequestMethod.POST,
-			consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@RequestMapping(value = "/clearSearchHistory", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void clearSearchHistory(@RequestBody Object history) {
 		historyService.clearSearchHistory(history);
 		return;
