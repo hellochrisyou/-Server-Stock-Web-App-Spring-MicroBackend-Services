@@ -19,10 +19,9 @@ Http Interceptor<br>
 Route Guard
 
 ## Spring Features:
-    Microservices
-    NoSQL Database (Spring Data/MongoDB)<br>
-    MVC: 
-     Controller, Repository, Service
+Microservices<br>
+NoSQL Database (Spring Data/MongoDB)<br>
+MVC
 
 ## Firebase Authentication (includes 3rd party authentication via Firebase api)
 
